@@ -37,8 +37,9 @@ function Header() {
     <div className="rounded-3xl bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-white p-8 md:p-10 shadow-lg">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery - Sakana AI.</h1>
-          <p className="mt-1 text-sm text-zinc-400">Fonte: Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, Jeff Clune, David Ha — Sakana AI (2024)</p>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery.</h1>
+          <p className="mt-1 text-sm text-zinc-400">Autores: Lu, Chris and Lu, Cong and Lange, Robert Tjarko and Foerster, Jakob and Clune, Jeff and Ha, David.</p>
+          <a href="https://arxiv.org/abs/2408.06292">[Artigo: arXiv preprint arXiv:2408.06292 - ano 2024]</a> 
         </div>
         <div className="shrink-0">
           <div className="bg-white/10 rounded-2xl px-4 py-3 text-sm">
@@ -260,7 +261,7 @@ export default function SakanaAISite() {
               </SectionCard>
               <SectionCard tone="tip" title="Repositório & Código">
                 <p>
-                  Projeto original e papers gerados estão disponíveis publicamente no GitHub do Sakana AI (AI‑Scientist).
+                  Projeto original e papers gerados estão disponíveis publicamente no <a href="https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file#template-resources">GitHub do Sakana AI</a> (AI‑Scientist).
                 </p>
               </SectionCard>
             </div>
