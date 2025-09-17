@@ -129,8 +129,9 @@ export default function SakanaAISite() {
 
           {active === "metodos" && (
             <div className="space-y-6">
-              <SectionCard title="Ciclo completo do The AI Scientist (9 etapas)">
+              <SectionCard tone="green" title="Ciclo completo do The AI Scientist (9 etapas)">
                 <p>Pipeline de ponta a ponta para gerar um paper de forma autônoma. Em cada etapa abaixo, indicamos se há um <strong>Agente</strong> (LLM/agentic) dedicado ou se é uma fase automatizada do sistema.</p>
+                <img src="src\assets\fluxoSakanaIa.png" alt="Fluxo dos Agentes do AI Scientist" style={{ width: "75%", justifyContent: "center", alignItems: "center" }}/>
               </SectionCard>
 
               <SectionCard title="1) Ideação">
