@@ -97,7 +97,7 @@ export default function SakanaAISite() {
           {active === "intro" && (
             <div className="space-y-6">
               <SectionCard tone="blue" title="Objetivo Principal">
-                <p>Desenvolver um framework de descoberta científica totalmente automatizado, em que modelos de linguagem de fronteira (LLMs) e agentes de código realizam toda a pipeline:</p>
+                <p>Desenvolver um framework de descoberta científica totalmente automatizado, no qual, modelos de linguagem de fronteira (LLMs) e agentes de código realizam toda a pipeline:</p>
                 <ul>
                   <li>geração de ideias de pesquisa,</li>
                   <li>planejamento e execução de experimentos,</li>
@@ -230,7 +230,7 @@ export default function SakanaAISite() {
           {active === "glossario" && (
             <div className="grid md:grid-cols-2 gap-4">
               <SectionCard title="LLM (Large Language Model)">
-                <p>Modelo de linguagem autoregressivo capaz de raciocínio, conhecimento comum e geração de código, habilitando agentes.</p>
+                <p>Modelo de linguagem autoregressivo capaz de raciocínio, conhecimento comum e geração de código, habilitando agentes. Ex: Gpt, Claude, Gemini, LLaMA</p>
               </SectionCard>
 
               <SectionCard title="Chain-of-Thought">
@@ -348,9 +348,9 @@ export default function SakanaAISite() {
               <SectionCard tone="warning" title="Limitações & Riscos">
                 <ul>
                   <li><strong>Implementações incorretas</strong> podem ser difíceis de detectar, mesmo com execução repetida de experimentos.</li>
-                  <li>Risco de <strong>hallucinations</strong> em textos, métricas ou figuras, levando a conclusões enganosas.</li>
+                  <li>Risco de <strong>alucinação</strong> em textos, métricas ou figuras, levando a conclusões enganosas.</li>
                   <li>O rigor é limitado pelo número de experimentos possíveis em orçamento restrito, resultando em <strong>comparações por vezes injustas</strong> (parâmetros, FLOPs, datasets).</li>
-                  <li><strong>Uso indevido</strong> pode saturar o sistema de revisão científica com papers artificiais ou gerar resultados perigosos (em biologia ou software sensível).</li>
+                  <li><strong>Uso indevido</strong> pode saturar o sistema de revisão científica com papers artificiais ou gerar resultados perigosos.</li>
                   <li>Questões éticas incluem <strong>viés nos LLMs</strong>, atribuição de autoria e impacto no ecossistema acadêmico.</li>
                 </ul>
               </SectionCard>
@@ -382,14 +382,14 @@ export default function SakanaAISite() {
               </SectionCard>
               <SectionCard tone="info" title="Datasets & Templates Utilizados">
                 <p>
-                  O <strong>AI Scientist</strong> utiliza uma série de <em>templates</em> de código e datasets como ponto de partida para cada domínio de pesquisa. Esses recursos funcionam como seeds mínimos que o agente modifica e expande durante o ciclo de pesquisa.
+                  O <strong>AI Scientist</strong> utiliza uma série de <em>templates</em> de código e datasets como ponto de partida para cada domínio de pesquisa. Pense neles como "sementinhas" mínimas: a IA pega isso, muda, melhora e expande tudo durante o processo de pesquisa, como um ciclo de testes e ajustes.
                 </p>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    <strong>Modelagem por Difusão</strong>: template baseado em <em>DDPM</em> (Ho et al., 2020), usado para estudar arquiteturas de difusão e escalabilidade de modelos generativos.
+                    <strong>Modelagem por Difusão</strong>: template baseado em <em>DDPM</em> (Ho et al., 2020), ajuda a explorar como criar estruturas de IA que geram coisas novas, como imagens, e ver como esses modelos lidam com crescimento em tamanho e complexidade.
                   </li>
                   <li>
-                    <strong>Modelagem de Linguagem</strong>: código inicial com Transformer (<em>Attention Is All You Need</em>, Vaswani et al., 2017), permitindo experimentos de predição de tokens, perplexidade e variação de hiperparâmetros.
+                    <strong>Modelagem de Linguagem</strong>: código inicial com Transformer (<em>Attention Is All You Need</em>, Vaswani et al., 2017), permitindo experimentos de predição de tokens, perplexidade e variação de hiperparâmetros. Ou seja, com isso, a IA pode fazer experimentos para prever palavras em textos, medir o quão bom é o resultado e testar diferentes configurações para otimizar o desempenho.
                   </li>
                   <li>
                     <strong>Grokking</strong>: template baseado em tarefas sintéticas (<em>Grokking</em>, Power et al., 2022), explorando a dinâmica de aprendizado e generalização tardia em redes neurais.
