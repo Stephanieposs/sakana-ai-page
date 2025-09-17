@@ -22,8 +22,6 @@ const SectionCard = ({ title, children, tone = "default" }) => {
     pink: "bg-pink-50",
     purple: "bg-purple-50",
     orange: "bg-orange-50",
-    amber: "bg-amber-50",
-    tip: "bg-violet-50",
   };
   return (
     <motion.div
@@ -40,17 +38,17 @@ const SectionCard = ({ title, children, tone = "default" }) => {
 
 function Header() {
   return (
-    <div className="rounded-3xl bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-white p-8 md:p-10 shadow-lg">
+    <div className="rounded-3xl bg-gradient-to-br from-blue-400  to-blue-800 text-white p-8 md:p-10 shadow-lg">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery.</h1>
-          <p className="mt-1 text-sm text-zinc-400">Autores: Lu, Chris and Lu, Cong and Lange, Robert Tjarko and Foerster, Jakob and Clune, Jeff and Ha, David.</p>
+          <p className="mt-1 text-sm text-white">Autores: Lu, Chris and Lu, Cong and Lange, Robert Tjarko and Foerster, Jakob and Clune, Jeff and Ha, David.</p>
           <a href="https://arxiv.org/abs/2408.06292">[Artigo: arXiv preprint arXiv:2408.06292 - ano 2024]</a>
         </div>
         <div className="shrink-0">
           <div className="bg-white/10 rounded-2xl px-4 py-3 text-sm">
             <div className="font-medium">Uso de Multiagentes e LLMs</div>
-            <div className="text-zinc-300">Ideação → Experimentos → Manuscrito → Revisão</div>
+            <div className="text-white">Ideação → Experimentos → Manuscrito → Revisão</div>
           </div>
         </div>
       </div>
@@ -74,7 +72,7 @@ export default function SakanaAISite() {
                 key={key}
                 onClick={() => setActive(key)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm transition-colors ${active === key
-                  ? "bg-zinc-900 text-white"
+                  ? "bg-blue-400 text-white"
                   : "text-zinc-700 hover:bg-zinc-100"
                   }`}
                 aria-pressed={active === key}
@@ -129,9 +127,9 @@ export default function SakanaAISite() {
 
           {active === "metodos" && (
             <div className="space-y-6">
-              <SectionCard tone="green" title="Ciclo completo do The AI Scientist (9 etapas)">
+              <SectionCard tone="blue" title="Ciclo completo do The AI Scientist (9 etapas)">
+                <img src="src\assets\fluxoSakanaIa.png" alt="Fluxo dos Agentes do AI Scientist" style={{ width: "75%", justifyContent: "center", alignItems: "center" }} />
                 <p>Pipeline de ponta a ponta para gerar um paper de forma autônoma. Em cada etapa abaixo, indicamos se há um <strong>Agente</strong> (LLM/agentic) dedicado ou se é uma fase automatizada do sistema.</p>
-                <img src="src\assets\fluxoSakanaIa.png" alt="Fluxo dos Agentes do AI Scientist" style={{ width: "75%", justifyContent: "center", alignItems: "center" }}/>
               </SectionCard>
 
               <SectionCard title="1) Ideação">
@@ -145,7 +143,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard title="2) Planejamento de Experimentos">
+              <SectionCard tone="blue" title="2) Planejamento de Experimentos">
                 <p><strong>Agente:</strong> <span>Sim — Planner (LLM)</span></p>
                 <ul>
                   <li><strong>O que faz:</strong> transforma a ideia em um plano executável (número de rodadas, varreduras de hiperparâmetros, métricas e baselines).</li>
@@ -166,7 +164,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard title="4) Execução de Experimentos">
+              <SectionCard tone="blue" title="4) Execução de Experimentos">
                 <p><strong>Agente:</strong> <span>Não — Orquestração/automação de execução</span></p>
                 <ul>
                   <li><strong>O que faz:</strong> roda os comandos padronizados de treino/avaliação, coleta logs e artefatos.</li>
@@ -186,7 +184,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard title="6) Redação do Manuscrito (LaTeX)">
+              <SectionCard tone="blue" title="6) Redação do Manuscrito (LaTeX)">
                 <p><strong>Agente:</strong> <span>Sim — Agente Redator (LLM, via Aider)</span></p>
                 <ul>
                   <li><strong>O que faz:</strong> preenche a estrutura LaTeX seção a seção (introdução, método, setup, resultados, conclusão).</li>
@@ -206,7 +204,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard title="8) Revisão Automática por Pares">
+              <SectionCard tone="blue" title="8) Revisão Automática por Pares">
                 <p><strong>Agente:</strong> <span>Sim — Agente Revisor (LLM)</span></p>
                 <ul>
                   <li><strong>O que faz:</strong> avalia segundo diretrizes (p.ex., NeurIPS/ICLR), emite notas (soundness, apresentação, contribuição, overall, confiança) e decisão preliminar.</li>
@@ -234,11 +232,11 @@ export default function SakanaAISite() {
                 <p>Modelo de linguagem autoregressivo capaz de raciocínio, conhecimento comum e geração de código, habilitando agentes. Ex: Gpt, Claude, Gemini, LLaMA</p>
               </SectionCard>
 
-              <SectionCard title="Chain-of-Thought">
+              <SectionCard tone="blue" title="Chain-of-Thought">
                 <p>Estratégia de prompting que incentiva passos de raciocínio explícitos para decisões mais robustas. O modelo escreve seu raciocínio em etapas intermediárias, o que ajuda a gerar ideias de pesquisa mais claras e consistentes.</p>
               </SectionCard>
 
-              <SectionCard title="Self-Reflection (Reflexion)">
+              <SectionCard tone="blue" title="Self-Reflection (Reflexion)">
                 <p>Ciclo de autoavaliação em que o agente critica e melhora saídas anteriores (ideias, planos, seções do paper). Esse mecanismo reduz redundância, melhora clareza e permite ajustes mais precisos durante o processo.</p>
               </SectionCard>
 
@@ -250,11 +248,11 @@ export default function SakanaAISite() {
                 <p>Método em que múltiplas instâncias de revisão (de um mesmo artigo) são geradas e depois combinadas. Isso reduz variância e aumenta a robustez das notas e comentários do revisor automatizado.</p>
               </SectionCard>
 
-              <SectionCard title="Meta-Review (Area Chair Simulation)">
+              <SectionCard tone="blue" title="Meta-Review (Area Chair Simulation)">
                 <p>Passo adicional em que o sistema gera uma revisão consolidada, atuando como se fosse um “Area Chair” humano. Resume os pareceres anteriores e decide de forma mais calibrada.</p>
               </SectionCard>
 
-              <SectionCard title="Agente de Código - Aider">
+              <SectionCard tone="blue" title="Agente de Código - Aider">
                 <p>Agente de código baseado em LLM capaz de editar repositórios inteiros. Implementa novas ideias, corrige erros, gera figuras e mantém um “diário experimental” com notas para cada execução.</p>
               </SectionCard>
 
@@ -285,7 +283,7 @@ export default function SakanaAISite() {
                 </p>
               </SectionCard>
 
-              <SectionCard tone="tip" title="Avaliação do Revisor Automático">
+              <SectionCard tone="blue" title="Avaliação do Revisor Automático">
                 <p>
                   O <strong>Agente Revisor LLM</strong> foi calibrado e comparado com revisores humanos de conferências como ICLR.
                   O desempenho obtido em termos de <em>acurácia balanceada</em> foi:
@@ -311,7 +309,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard tone="success" title="Performance e Escalabilidade">
+              <SectionCard tone="blue" title="Performance e Escalabilidade">
                 <p>
                   O sistema demonstrou ser capaz de manter o ciclo <em>end-to-end</em> de forma confiável em diferentes temas, mostrando:
                 </p>
@@ -338,7 +336,7 @@ export default function SakanaAISite() {
 
           {active === "discussao" && (
             <div className="space-y-6">
-              <SectionCard tone="info" title="Implicações Teóricas e Científicas">
+              <SectionCard tone="blue" title="Implicações Teóricas e Científicas">
                 <ul>
                   <li>LLMs atuando como agentes de descoberta podem <strong>acelerar o ciclo científico</strong> com baixo custo e alta escala.</li>
                   <li>O formato <em>paper</em> automatizado garante <strong>interpretabilidade, auditabilidade e padronização</strong>, comparável ao processo humano tradicional.</li>
@@ -346,7 +344,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard tone="warning" title="Limitações & Riscos">
+              <SectionCard tone="purple" title="Limitações & Riscos">
                 <ul>
                   <li><strong>Implementações incorretas</strong> podem ser difíceis de detectar, mesmo com execução repetida de experimentos.</li>
                   <li>Risco de <strong>alucinação</strong> em textos, métricas ou figuras, levando a conclusões enganosas.</li>
@@ -356,7 +354,7 @@ export default function SakanaAISite() {
                 </ul>
               </SectionCard>
 
-              <SectionCard tone="tip" title="Oportunidades Futuras">
+              <SectionCard title="Oportunidades Futuras">
                 <ul>
                   <li>Explorar <strong>visão multimodal</strong> para interpretar e ajustar figuras, tabelas e layout de artigos.</li>
                   <li>Desenvolver <strong>sandboxes mais seguros</strong> para execução de código, garantindo confiabilidade e mitigando riscos de segurança.</li>
@@ -381,7 +379,7 @@ export default function SakanaAISite() {
                   <li>Ho, J. et al. <em>DDPM</em> (2020); Vaswani, A. et al. <em>Attention Is All You Need</em> (2017); Power, A. et al. <em>Grokking</em> (2022).</li>
                 </ol>
               </SectionCard>
-              <SectionCard tone="info" title="Datasets & Templates Utilizados">
+              <SectionCard tone="blue" title="Datasets & Templates Utilizados">
                 <p>
                   O <strong>AI Scientist</strong> utiliza uma série de <em>templates</em> de código e datasets como ponto de partida para cada domínio de pesquisa. Pense neles como "sementinhas" mínimas: a IA pega isso, muda, melhora e expande tudo durante o processo de pesquisa, como um ciclo de testes e ajustes.
                 </p>
@@ -397,7 +395,7 @@ export default function SakanaAISite() {
                   </li>
                 </ul>
               </SectionCard>
-              <SectionCard tone="tip" title="Repositório & Código">
+              <SectionCard tone="purple" title="Repositório & Código">
                 <p>
                   Projeto original e papers gerados estão disponíveis publicamente no <a href="https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file#template-resources">GitHub do Sakana AI</a> (AI‑Scientist).
                 </p>
